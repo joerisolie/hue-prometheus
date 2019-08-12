@@ -1,9 +1,9 @@
 from phue import Bridge
 from prometheus_client import start_http_server, Gauge
-import pprint
+#import pprint
 
 b = Bridge('10.0.0.133')
-pp = pprint.PrettyPrinter(indent=4)
+#pp = pprint.PrettyPrinter(indent=4)
 
 ##Prometheus metrics
 front_door_temperature = Gauge('front_door_temperature', 'Outside temperature (C) at the front door')
