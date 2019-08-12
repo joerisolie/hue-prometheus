@@ -1,5 +1,6 @@
 from phue import Bridge
 from prometheus_client import start_http_server, Gauge
+import time
 #import pprint
 
 b = Bridge('10.0.0.133')
@@ -15,6 +16,7 @@ if __name__ == '__main__':
     start_http_server(8000)
     api = b.get_api()
     while True:
+        time.sleep(15)
         for s in api.get('sensors'):
             sensor_data = api.get('sensors').get(s)
             if sensor_data.get('type') == 'ZLLTemperature' and sensor_data.get('name') == 'Hue temperature sensor 1':
