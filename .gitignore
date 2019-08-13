@@ -1,1 +1,4 @@
 .idea/
+venv/
+nohup.out
+run_client.sh

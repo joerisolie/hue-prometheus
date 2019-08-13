@@ -14,9 +14,9 @@ front_door_light_level = Gauge('front_door_light_level', 'Light level (Lux) at t
 if __name__ == '__main__':
     # Start up the server to expose the metrics.
     start_http_server(8000)
-    api = b.get_api()
     while True:
         time.sleep(15)
+        api = b.get_api()
         for s in api.get('sensors'):
             sensor_data = api.get('sensors').get(s)
             if sensor_data.get('type') == 'ZLLTemperature' and sensor_data.get('name') == 'Hue temperature sensor 1':
